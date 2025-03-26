@@ -2,6 +2,7 @@ import Navbar from "../components/navbar/navbar";
 import "./globals.css";
 import ThemeProvider from "../components/ui/theme-provider";
 import { BasketProvider } from "../store/basketStore";
+import Footer from "../components/footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
           <BasketProvider>
             <Navbar />
             {children}
+            <Footer/>
           </BasketProvider>
         </ThemeProvider>
       </body>

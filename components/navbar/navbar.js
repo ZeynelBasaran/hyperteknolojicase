@@ -2,6 +2,7 @@ import Link from "next/link";
 import ModeToggleTheme from "./toogleTheme";
 import { Button } from "../ui/button";
 import { SlBasket } from "react-icons/sl";
+import BasketIcon from "./basketIcon";
 
 const Navbar = () => {
   return (
@@ -18,7 +19,7 @@ const Navbar = () => {
           <Button asChild className="flex justify-start" variant="white" size="xl">
             <Link href="/sepet" className="relative">
               <SlBasket />
-              <span className="absolute flex items-center justify-center rounded-full right-1 top-1 bg-black h-6 w-6 text-white">0</span>
+              <BasketIcon/>
             </Link>
           </Button>
         </div>
