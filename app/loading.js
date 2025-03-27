@@ -1,6 +1,6 @@
 const LoadingPage = () => {
   return (
-    <div role="w-full h-full">
+    <div role="w-full h-full flex flex-grow">
       <div className="flex items-center justify-center p-20">
         <svg
           aria-hidden="true"

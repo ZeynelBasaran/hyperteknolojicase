@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import AddBtn from "./addBtn";
+import Heart from "./heart";
 
 const ProductCard = ({ product }) => {
   const { productName, salePrice, productData } = product;
@@ -9,7 +10,8 @@ const ProductCard = ({ product }) => {
   const [intValue, floatValue] = value.split(".");
 
   return (
-    <div className="rounded-lg border p-4 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg min-w-[250px] max-w-[500px] dark:bg-white dark:text-black">
+    <div className="rounded-lg border p-4 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg min-w-[250px] max-w-[550px] dark:bg-white dark:text-blac relative">
+      <Heart product={product} />
       <div className="h-40 w-full flex items-center justify-center">
         {
           <Image
@@ -22,11 +24,11 @@ const ProductCard = ({ product }) => {
         }
       </div>
       <div className="pt-6">
-        <div className="h-10 hover:no-underline text-lg font-semibold leading-tight line-clamp-2 w-full">
+        <div className="h-10 hover:no-underline text-lg font-semibold leading-tight line-clamp-2 w-full text-black">
           {productName}
         </div>
 
-        <div className="mt-2 flex items-center justify-between gap-4">
+        <div className="mt-2 flex items-center justify-between gap-4 text-black">
           <p className="text-xl font-extrabold leading-tight">
             <span className="text-xs align-super">$</span>
             {intValue}
@@ -35,7 +37,6 @@ const ProductCard = ({ product }) => {
 
           <AddBtn product={product} />
         </div>
-        
       </div>
     </div>
   );
