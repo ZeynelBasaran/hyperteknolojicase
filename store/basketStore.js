@@ -55,17 +55,18 @@ export function BasketProvider({ children }) {
     }
   };
 
-  const toggleFavorite = (product) => {
+  const toggleFavorite = (id) => {
+    
     setFavorites((prevFavorites) => {
       let updatedFavorites;
       // Eğer ürün favorilerde varsa çıkar
-      if (prevFavorites.find((fav) => fav.productID === product.productID)) {
+      if (prevFavorites.find((productID) => productID === id)) {
         updatedFavorites = prevFavorites.filter(
-          (fav) => fav.productID !== product.productID
+          (productID) => productID !== id
         );
       } else {
         // Yeni bir favori eklerken önceki state'i koruyoruz
-        updatedFavorites = [...prevFavorites, product];
+        updatedFavorites = [...prevFavorites, id];
       }
 
       addLSFavorites(updatedFavorites);
@@ -73,7 +74,7 @@ export function BasketProvider({ children }) {
     });
   };
 
-  
+
   return (
     <BasketContext.Provider
       value={{ basket, addToBasket, toggleFavorite, favorites }}

@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="rounded-lg border p-4 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg min-w-[250px] max-w-[550px] dark:bg-white dark:text-blac relative">
-      <Heart product={product} />
+      <Heart productID={product.productID} />
       <div className="h-40 w-full flex items-center justify-center">
         {
           <Image
