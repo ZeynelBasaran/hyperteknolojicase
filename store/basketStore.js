@@ -73,7 +73,7 @@ export function BasketProvider({ children }) {
     });
   };
 
-
+  
   return (
     <BasketContext.Provider
       value={{ basket, addToBasket, toggleFavorite, favorites }}
